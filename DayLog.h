@@ -3,18 +3,19 @@
 #include <vector>
 #include <ctime>
 #include "Vehicle.h"
-#include "myDate.h";
+#include "myDate.h"
 #include <iostream>
 
 using namespace std;
 
 class DayLog
 {
+public:
 	myDate logDate;
 	int noOfArrivals;
 	vector<Vehicle> waitingList;
 	vector<Vehicle> serviceList;
-public:
+
 	DayLog(): noOfArrivals(0) {
 		time_t result = time(nullptr);
 		tm* datetime = localtime(&result);
@@ -24,8 +25,14 @@ public:
 		logDate = myDate(d, m, y);
 	}
 
-	myDate getLogDate() {
-		return logDate;
-	}
+	void addVehicle(int rfNumb, string Id, string tchNm, int day, int mon, int yr, int hr, int min);
+
+	int getArrived();
+
+	size_t getNumberWaiting();
+
+	int findWaitingPosition(Vehicle v);
+
+	void serviceVehicle(Vehicle v, int h, int m);
 };
 

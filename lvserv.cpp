@@ -8,10 +8,30 @@ using namespace std;
 
 int main()
 {
-   /* myDate  date = myDate(3, 4, -2016);
-    cout << date.getAsString() << endl;*/
 
     DayLog dl = DayLog();
 
-    cout << dl.getLogDate().getYear() << endl;;
+    dl.addVehicle(23, "IXK5698", "Dimitris Katsogiannis", 18, 5, 2022, 10, 40);
+    dl.addVehicle(29, "IBK5698", "Dimitris Katsogiannis", 18, 5, 2022, 10, 43);
+    dl.addVehicle(23, "IXK5698", "Dimitris Katsogiannis", 19, 5, 2022, 12, 20);
+   
+    for (auto w : dl.waitingList) {
+        cout << w.getAsString() << endl;
+    }
+
+    cout << endl <<"Servicing first car ...." << endl<<endl;
+
+    size_t s = dl.waitingList.size();
+    dl.serviceVehicle(dl.waitingList[s-1], 10,45);
+
+
+    for (auto w : dl.waitingList) {
+        cout << w.getAsString() << endl;
+    }
+
+    cout << endl << "Serivice list..." << endl << endl;
+
+    for (auto w : dl.serviceList) {
+        cout << w.getAsString() << endl;
+    }
 }
