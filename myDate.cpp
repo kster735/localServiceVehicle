@@ -1,9 +1,9 @@
 #include "myDate.h"
 
 myDate::myDate(int d, int m, int y) {
-	this->setDay(d);
-	this->setMonth(m);
-	this->setYear(y);
+	setDay(d);
+	setMonth(m);
+	setYear(y);
 }
 
 int myDate::getDay() {

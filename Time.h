@@ -24,8 +24,8 @@ class Time
 public:
 	Time() :hour(0), minute(0) {};
 	Time(int h, int m){
-		this->setHour(h);
-		this->setMinute(m);
+		setHour(h);
+		setMinute(m);
 	};
 	int getHour();
 	int getMinute();

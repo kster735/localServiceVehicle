@@ -12,14 +12,16 @@ int DayLog::getArrived() {
 	return noOfArrivals;
 }
 
-size_t DayLog::getNumberWaiting() {
+int DayLog::getNumberWaiting() {
 	return waitingList.size();
 }
 
 int DayLog::findWaitingPosition(Vehicle v) {
 	int pos=0;
-	for (auto& w : waitingList) {
-		if (w.getId() == v.getId()) {
+	vector<Vehicle>::iterator w;
+
+	for (w = waitingList.begin(); w != waitingList.end(); ++w) {
+		if (w->getId() == v.getId()) {
 			return pos;
 		}
 		++pos;
@@ -33,7 +35,7 @@ void DayLog::serviceVehicle(Vehicle v, int h, int m) {
 		Vehicle temp = Vehicle();
 		temp = waitingList[waitPos];
 		temp.setStartServ(h, m);
-		vector<Vehicle>::iterator wit = waitingList.begin() + waitPos;
+		auto wit = waitingList.begin() + waitPos;
 		waitingList.erase(wit);
 		serviceList.push_back(temp);
 	}

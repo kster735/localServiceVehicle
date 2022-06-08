@@ -29,7 +29,7 @@ public:
 
 	int getArrived();
 
-	size_t getNumberWaiting();
+	int getNumberWaiting();
 
 	int findWaitingPosition(Vehicle v);
 

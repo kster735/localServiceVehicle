@@ -14,30 +14,12 @@ class Vehicle
 	string id;
 	string techName;
 public:
-	Vehicle() {};
+	Vehicle():refNumber(0) {};
 
 	Vehicle(int r, string i, string name, int d, int m, int y) :
 		refNumber(r), id(i), techName(name) {
 		manufDate = myDate(d, m, y);
 	};
-
-	/*Vehicle(Vehicle&& v) noexcept {
-		refNumber = v.refNumber;
-		manufDate = v.manufDate;
-		arrTime = v.arrTime;
-		startServ = v.startServ;
-		id = v.id;
-		techName = v.techName;
-	}
-
-	Vehicle(const Vehicle& v) noexcept {
-		refNumber = v.refNumber;
-		manufDate = v.manufDate;
-		arrTime = v.arrTime;
-		startServ = v.startServ;
-		id = v.id;
-		techName = v.techName;
-	}*/
 
 	int getRefNumber();
 	void setRefNumber(int r);

@@ -9,8 +9,8 @@ int Time::getMinute() {
 }
 
 void Time::setTime(int h, int m) {
-	this->setHour(h);
-	this->setMinute(m);
+	setHour(h);
+	setMinute(m);
 }
 
 string Time::getAsString() {

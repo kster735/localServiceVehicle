@@ -8,7 +8,6 @@ using namespace std;
 
 int main()
 {
-
     DayLog dl = DayLog();
 
     dl.addVehicle(23, "IXK5698", "Dimitris Katsogiannis", 18, 5, 2022, 10, 40);
@@ -29,7 +28,7 @@ int main()
         cout << w.getAsString() << endl;
     }
 
-    cout << endl << "Serivice list..." << endl << endl;
+    cout << endl << "Service list..." << endl << endl;
 
     for (auto w : dl.serviceList) {
         cout << w.getAsString() << endl;

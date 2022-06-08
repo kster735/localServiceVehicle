@@ -48,19 +48,9 @@ void Vehicle::setStartServ(int h, int m) {
 }
 
 string Vehicle::getAsString() {
-	string svehicle = "";
-	string sr, si, stn, smnfd;
-
-	sr = to_string(refNumber);
-
-	si = id;
-
-	stn = techName;
-
-	smnfd = manufDate.getAsString();
-
-	svehicle = "refNumber: " + sr + ", id: " + si + ", techName: " + stn + ", manufDate: " + smnfd;
-
+	string sr = to_string(refNumber);
+	string smnfd = manufDate.getAsString();
+	string svehicle = "refNumber: " + sr + ", id: " + id + ", techName: " + techName + ", manufDate: " + smnfd;
 	return svehicle;
 }
 
